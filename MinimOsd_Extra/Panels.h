@@ -681,9 +681,7 @@ static void panRSSI(point p){
 
     filter(rssi,  rssi_norm, get_alt_filter(p) ); // комплиментарный фильтр 1/n.
 
-    osd_printi_1(f3i, (int)rssi);
-    if(!(sets.RSSI_raw%2) && is_alt3(p))
-	osd_percent();
+    osd_printi_1(PSTR("%i.%3i.%3i"),(int)osd_ERFM,(int)osd_ELQ,(int)osd_rssi);
 }
 
 /* **************************************************************** */

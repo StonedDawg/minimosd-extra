@@ -177,6 +177,8 @@ static Point trk[4] = {{0,0},{0,0},{0,0},{0,0}};
 
 //*************************************************************************************************************
 uint8_t      osd_rssi = 0; // raw value from mavlink
+uint8_t      osd_ERFM = 0;
+uint8_t      osd_ELQ = 0;
 uint8_t      telem_rssi = 0; // telemetry modem RSSI raw value
 uint16_t     rssi_in = 0;  // temp readed value after sliding average
 uint16_t     rssi_norm = 0;     //normalized 0-100%, but in RAW mode can contain full PWM value

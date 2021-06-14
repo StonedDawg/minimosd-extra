@@ -210,6 +210,8 @@ namespace OSD
 		
         public uint8_t rssiraw_on = 0;
         static uint8_t osd_rssi = 2;
+        static uint8_t osd_ERFM = 0;
+        static uint8_t osd_ELQ = 0;
         public uint8_t radio_setup_flag = 0;
         public uint8_t ch_toggle = 8; //CH8
         public byte  switch_mode = 1;
@@ -374,9 +376,9 @@ namespace OSD
  	        osd.setPanel(first_col, first_line);
  	        
  	        if(sign==1)
- 	            osd.printf("%c%3i", 0x09, osd_rssi);
+ 	            osd.printf("%c%i.%3i.%3i", 0x09,osd_ERFM,osd_ELQ, osd_rssi);
  	        else
-            	osd.printf("%3i", osd_rssi);
+            	osd.printf("%i.%3i.%3i",osd_ERFM,osd_ELQ, osd_rssi);
             if(is_alt(fAlt)) osd.write('%');
  	        return 0;
  	    }
