@@ -681,7 +681,7 @@ static void panRSSI(point p){
 
     filter(rssi,  rssi_norm, get_alt_filter(p) ); // комплиментарный фильтр 1/n.
 
-    osd_printi_1(PSTR("%i.%3i.%3i"),(int)osd_ERFM,(int)osd_ELQ,(int)osd_rssi);
+    osd.printf_P(PSTR("%i.%3i.%3i"),(int)osd_ERFM,(int)osd_ELQ,(int)osd_rssi);
 }
 
 /* **************************************************************** */
@@ -2532,7 +2532,7 @@ static const PROGMEM Params params2[] = {
 
 #define SENSOR(n) ((SensorInfo *)(EEPROM_offs(sensors) + n * sizeof(SensorInfo)))
 
-static const PROGMEM Params params3[] = {
+static const Params params3[] = {
 	{n_sensors,     0,   0,             0}, 
 	{n_k_sensor1,   's', &SENSOR(0)->K, (2 <<4) | 5 },
 	{n_a_sensor1,   's', &SENSOR(0)->A, (2 <<4) | 7 },
@@ -3259,5 +3259,3 @@ show_fdata:
 	}
     } 
 }
-
-

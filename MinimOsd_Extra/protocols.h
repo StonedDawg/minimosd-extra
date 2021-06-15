@@ -5,8 +5,8 @@
 #define MAVLINK_EXTERNAL_RX_BUFFER 1
 #define m_mavlink_message 1
 
-//#include "../GCS_MAVLink/include/mavlink/v1.0/mavlink_types.h"
-#include <include/mavlink/v1.0/mavlink_types.h>
+#include "../GCS_MAVLink/include/mavlink/v1.0/mavlink_types.h"
+//#include <include/mavlink/v1.0/mavlink_types.h>
 #elif defined(USE_UAVTALK)
 // see https://librepilot.atlassian.net/wiki/display/LPDOC/UavObjects
 
@@ -79,4 +79,3 @@ union {
 #include <GCS_MAVLink.h>
 //#include "../GCS_MAVLink/GCS_MAVLink.h"
 #endif
-
