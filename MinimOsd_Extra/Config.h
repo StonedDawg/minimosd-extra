@@ -1,7 +1,7 @@
 #pragma once
 
 #define IS_PLANE 1  // plane functions
-#define IS_COPTER 1 // copter functions
+#define IS_COPTER 0 // copter functions
 // sets.model_type plane=0 copter=1
 
 
@@ -164,10 +164,10 @@
 
 #define FONT_UPLOAD 1
 #define USE_SETUP 1
-#define AUTOBAUD 1
+#define AUTOBAUD 0
 #define USE_SENSORS 1
 
-#define USE_ADSB 1
+#define USE_ADSB 0
 #define SHOW_NO_DATA 1
 #define USE_VIBE 1
 

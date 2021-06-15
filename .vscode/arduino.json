@@ -1,5 +1,4 @@
 {
-    "configuration": "cpu=16MHzatmega328",
     "board": "arduino:avr:pro",
     "sketch": "MinimOsd_Extra\\MinimOsd_Extra.ino"
 }

@@ -74,13 +74,10 @@
 #define STATUS_reg_nvr_busy 0x20
 
 //If PAL
-#ifdef isPAL
-  #define MAX7456_screen_size 480 //16x30
-  #define MAX7456_screen_rows 0x10
-#else
+
   #define MAX7456_screen_size 390 //13x30
   #define MAX7456_screen_rows 0x0D
-#endif
+
 
 
 //------------------ the OSD class -----------------------------------------------

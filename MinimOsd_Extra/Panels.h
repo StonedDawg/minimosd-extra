@@ -692,9 +692,9 @@ static void panRSSI(point p){
 // Staus  : done
 
 static void panCALLSIGN(point p){
-    if((seconds % 64) < 2 || is_alt(p)){
-      osd.print( (char *)sets.OSD_CALL_SIGN);
-    }
+    //if((seconds % 64) < 2 || is_alt(p)){
+      //osd.print( (char *)sets.OSD_CALL_SIGN);
+    //}
 }
 
 
@@ -769,7 +769,7 @@ static void panHomeAlt(point p){
 // Staus  : done
 
 static void panClimb(point p){
-
+/**
     climb_filter = get_alt_filter(p);
     
     static const PROGMEM char f_4_0f[]="% 4.0f";
@@ -795,6 +795,7 @@ static void panClimb(point p){
             osd_printf_2(f_4_0f, f, pgm_read_byte(&measure->climbchar));
         }
     }
+    */
 }
 
 /* **************************************************************** */
@@ -929,17 +930,17 @@ static inline void check_warn(point p)
 // Staus  : done
 
 
-const char PROGMEM w1[]="\x4E\x6F\x20\x47\x50\x53\x20\x66\x69\x78"; // No GPS fix
-const char PROGMEM w2[]="\x20\x20\x53\x74\x61\x6c\x6c";             //   Stall
-const char PROGMEM w3[]="\x4f\x76\x65\x72\x53\x70\x65\x65\x64";     // Over Speed
-const char PROGMEM w4[]="\x42\x61\x74\x74\x65\x72\x79\x20\x4c\x6f\x77"; //Battery Low
-const char PROGMEM w5[]="\x20\x4c\x6f\x77\x20\x52\x73\x73\x69";        // Low Rssi!
-const char PROGMEM w6[]="\x48\x69\x67\x68\x20\x56\x53\x70\x65\x65\x64"; //Hi VSpeed
-const char PROGMEM w7[]="Batt B low"; 
-const char PROGMEM w8[]="Fence Low";
-const char PROGMEM w9[]="Fence High";
-const char PROGMEM w10[]="Fence Far";
-const char PROGMEM w11[]="Motor dead";
+const char PROGMEM w1[]="\x4E\x6F\x20\x66\x69\x78"; // No GPS fix
+const char PROGMEM w2[]="\x53\x74\x61\x6c\x6c";             //   Stall
+const char PROGMEM w3[]="\x4f\x76\x65\x72";     // Over Speed
+const char PROGMEM w4[]="\x42\x61\x74\x74\x65"; //Battery Low
+const char PROGMEM w5[]="\x52\x73\x73\x69";        // Low Rssi!
+const char PROGMEM w6[]="\x53\x70\x65\x65\x64"; //Hi VSpeed
+const char PROGMEM w7[]="BaBlow"; 
+const char PROGMEM w8[]="FLo";
+const char PROGMEM w9[]="FHi";
+const char PROGMEM w10[]="FFar";
+const char PROGMEM w11[]="Motdead";
 const char * const PROGMEM warn_str[] = {
     w1,
     w2,
@@ -1245,17 +1246,17 @@ static void panGPS(point p){
 
 
     if(lflags.blinker) {
-        PGM_P str=PSTR("Stream");
+        PGM_P str=PSTR("Stre");
 	if(lflags.mav_data_frozen>=MAX_FROZEN_COUNT){
 	    osd_print_S(str);
 	    OSD::write_S(div);
-	    osd_print_S(PSTR("frozen"));
+	    osd_print_S(PSTR("fro"));
 	    return;
 	}
 	if(lflags.mav_stream_overload>=MAX_OVERLOAD_COUNT){
 	    osd_print_S(str);
 	    OSD::write_S(div);
-	    osd_print_S(PSTR("overload"));
+	    osd_print_S(PSTR("ol"));
 	    return;
 	}
     }
@@ -1496,7 +1497,7 @@ static void panWaitMAVBeats(){
     osd_groundspeed=0; // to not move with last speed when "no data"
 
     OSD::setPanel(5,2);
-    osd_printi_1(PSTR("No input data! %u\xff"),seconds - lastMavSeconds);
+    osd_printi_1(PSTR("Noinput%u\xff"),seconds - lastMavSeconds);
 
 #if defined(AUTOBAUD)
     if(serial_speed)
